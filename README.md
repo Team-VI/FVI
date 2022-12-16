@@ -110,3 +110,12 @@ How will you communicate that it’s time to merge? slack messages.
 ## template to presentation deck slideshow
 
 Docs.google.com/presentation/d/1H-wbh17L2enXgrxyK93CoETe-dPt64VdXXmmCdpd6G0/edit#slide=id.g2accd1c413_3_31
+
+### Domain Model
+
+1. odds form/submit button functions 1b. winnings v. losses counter. if not a new player display stored winnings/losses.
+2. into both num functions, winningNum and gamblersNum
+3. if === print "youwin" blurb ++ wins and loop back to odds button, else print "sorry you're not a winner" blurb ++ losses/get help link
+
+- push either result to local storage, and update counters.
+
