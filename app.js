@@ -1,10 +1,10 @@
 'use strict';
 
-
+const doors = document.querySelectorAll('.door');
 
 //GLOBALS
 
-
+const tokens=['😈','👻','🎃','🤖','😡','💎'];
 
 // RNG FUNCTIONS
 function randomNumber(min,max){
