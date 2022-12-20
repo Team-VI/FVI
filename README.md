@@ -110,3 +110,74 @@ How will you communicate that it’s time to merge? slack messages.
 ## template to presentation deck slideshow
 
 Docs.google.com/presentation/d/1H-wbh17L2enXgrxyK93CoETe-dPt64VdXXmmCdpd6G0/edit#slide=id.g2accd1c413_3_31
+
+### Domain Model
+
+1. odds form/submit button functions 1b. winnings v. losses counter. if not a new player display stored winnings/losses.
+2. into both num functions, winningNum and gamblersNum
+3. if === print "youwin" blurb ++ wins and loop back to odds button, else print "sorry you're not a winner" blurb ++ losses/get help link
+
+- push either result to local storage, and update counters.
+
+
+['wireframe'](https://files.slack.com/files-pri/T039KG69K-F04FWSGE3KM/screenshot_2022-12-19_at_13.27.34.png)
+
+Team User Story Suggestions
+
+
+Title: Gambling Safe Space
+
+
+1.     As a user, I’d like to use a website that simulates casino winnings through some modern medium, i.e. a slot machine.  Doing so will give me a sense of accomplishment without taking inherent fiscal risks.
+* Working slot machine
+* Simulated winnings
+
+
+Title: Saving Recreational Gambler Finance
+
+
+2.     As a developer, I’d like to develop a safe space for novice gamblers to pique their interests without risking personal finances.  Additionally, I’d like to afford them a myriad of probability and performance metrics to weigh prior to gambling with money.
+* Free slot machine
+* Performance metrics tracked and rendered
+
+
+Title: Helping Gamber’s Before It’s Too Late
+
+
+3.     As a non-profit administrator, I’d like to have a test website to use as a deterrence platform.  I’d like if on the front end of the website, winnings are simulated, while on the back end it provides additional resources explaining gambling’s dangers while allowing users to learn about the odds, and seek gambling addiction help if necessary.
+* Provide educational resources
+* Show user performance data
+* Allow the user to alter gaming odds
+
+
+Title: Recreating the Real Deal
+
+
+4.     As a website designer, I want to create a gambling interface that best simulates casino atmosphere, e.g. sounds, images, and allure.  This way, users can get all the bells and whistles of an experience without ever stepping foot inside a casino.
+* CSS colors and animations to simulate real game
+* Embedded sounds to simulate real game
+* Allow user input to change animations
+
+
+Title: Better understanding of the odds
+
+
+5.        As a user, I would like to change the odds of a slot-machine and experience those odds in a game; so that I can get a better feel for how the odds affect the game.
+* Allow user input to change odds
+* Odds are incorporated in following game
+
+
+
+
+Title: Allow health care professionals to learn through doing.
+
+
+7. As a psychiatrist user, I want to see if the game is befitting for clients. 
+* Free online for all to play
+
+
+Title: Gamer out for the high score.
+
+
+8. As a gamer, I want to beat the highest score on every.
+* Tracking scores
