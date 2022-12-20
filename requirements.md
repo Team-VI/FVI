@@ -39,9 +39,10 @@ Software Requirements
   * No collection or storage of personal/identifiable data.
   * Will not provide or accept any monetary value to users.
   * Will not link to any for-profit gambling services.
-  * Minimum Viable Product 
 
-## What will your MVP functionality be?
+## Minimum Viable Product 
+
+### What will your MVP functionality be?
   * Our landing page will serve as a functioning, data collecting, casino-like slot machine supported by a randomized image array function, end arrays, with win/ loss increments and decrements.
 
 ## What are your stretch goals?
