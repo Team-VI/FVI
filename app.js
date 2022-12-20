@@ -1,31 +1,28 @@
 'use strict';
 
+let boxOne = document.getElementById('box-one');
+let boxTwo = document.getElementById('box-two');
+let boxThree = document.getElementById('box-three');
 
-//GLOBALS
+let recordTable = document.getElementById('record-table');
+
+//**************GLOBALS***********************************/////////
 
 
 let startingSpins = 10;
 let score = 0;
 
+let boxArray =[box1,box2,box3];
 
 const tokens=['😈','👻','🎃','🤖','😡','💎'];
 
-// RNG FUNCTIONS
-function init(firstInit=true, groups=1, duration=1){
-  for (const door of doors){
-    if (firstInit){
-      door.dataset.spinned === '0';
-    } else if (door.dataset.spinned==='1'){
-      return;
-    }
-  }
-}
+//**  RNG FUNCTIONS************************ */
 
-function randomNumber(){
-  min = Math.ceil(min);
-  max = Math.floor(max);
-  return Math.floor(Math.random() * (max - min + 1) +min );
-}
+// function randomNumber(){
+//   min = Math.ceil(min);
+//   max = Math.floor(max);
+//   return Math.floor(Math.random() * (max - min + 1) +min );
+// }
 
 function getRandomItem(tokens) {
 
@@ -39,53 +36,62 @@ function getRandomItem(tokens) {
 }
 
 getRandomItem(tokens);
+
+
+
+function spinFunction ()
+{
+  let box1 = getRandomItem;
+  let box2 = getRandomItem;
+  let box3 = getRandomItem;
+
+
+
+  if (box1 === box2 && box2 === box3){
+  score = score + 100;
+  }
+  else {
+    score = score - 100;
+  }
+  return score;
+
+  boxOne.innerHTML = `${box1}`;
+  boxTwo.innerHTML = `${box2}`;
+  boxThree.innerHTML = `${box3}`;
+
+}
+
+
+
+
 // const array = [1, 'hello', 5, 8];
 
 // const result = getRandomItem(array);
 
 
 
-
-
-
-
-
-
-
-
-// let winningNumber = randomNumber(1,1);
-// let usersNumber = randomNumber(1,1);
-
-// console.log(winningNumber);
-// console.log(usersNumber);
-
-
-
 //CONSTRUCTOR
-function User(name, age, score){
+function User(name, age){
   this.name=name;
   this.age=age;
   this.score = 0;
+  User.userArray.push(this);
 }
 
+let userArray = [];
 
-//TODO: "youwin/youlose" if/else function
-// sudo-code below
-// function winLose(winningNumber,usersNumber) {
-//   let i = 0;
-//   if (winningNumber === usersNumber) {
-//     i++;
-//     return i;
-//   } else {
-//     i--;
-//     return i;
-//   }
-// }
+let savedUser = JSON.stringify(userArray);
+localStorage.setItem('user', savedUser);
 
-// winLose();
+let fetchedUser = localStorage.getItem('user');
+let parsedUser = JSON.parse(fetchedUser);
 
 
-function header(){ /*****stand alone function */
+
+
+//*************************** Recording users result to the table *************************/
+
+function header(){ /*****Stand alone function */
 
   let tableRow = document.createElement('tr');
   recordTable.appendChild(tableRow);
@@ -101,11 +107,26 @@ function header(){ /*****stand alone function */
 
 header();
 
+function recordResult()     /**********Recording current result */
+{
+  let tableRow = document.createElement('tr');
+  recordTable.appendChild(tableRow);
+
+  tableCell = document.createElement('td');
+  tableCell.textContent = User.name;
+  tableRow.appendChild(tableCell);
+
+  tableCell = document.createElement('td');
+  tableCell.textContent = User.score;
+  tableRow.appendChild(tableCell);
+
+}
 
 
-let box1 = randomNumber;
-let box2 = randomNumber;
-let box3 = randomNumber;
+
+
+
+
 
 
 //TODO: user number gen on button push
@@ -116,3 +137,5 @@ let box3 = randomNumber;
 //TODO: 
 //TODO:
 //TODO:
+
+playButton.addEventListener('click', spinFunction);
