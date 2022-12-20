@@ -1,0 +1,15 @@
+:root {
+  --darkest:black;
+  --light-dark:gray;
+  --neutral:white;
+  --light-bright:red;
+  --bright:yellow;
+}
+
+#headerContainer {
+  border:2px solid red;
+  width:100%;
+  height:10vh;
+  background-color:red;
+  color:red;
+}
