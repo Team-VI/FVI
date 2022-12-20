@@ -119,8 +119,11 @@ Docs.google.com/presentation/d/1H-wbh17L2enXgrxyK93CoETe-dPt64VdXXmmCdpd6G0/edit
 
 - push either result to local storage, and update counters.
 
+## Wireframe Website
+!['wireframe'](image/wireframe-website.png)
 
-['wireframe'](https://files.slack.com/files-pri/T039KG69K-F04FWSGE3KM/screenshot_2022-12-19_at_13.27.34.png)
+## Wireframe Domain Model
+!['Domain Model wireframe'](image/wireframe-domain-model.png)
 
 Team User Story Suggestions
 
