@@ -40,11 +40,11 @@ function handleSubmit(event){
   userArray.push(newUser);
   console.log(newUser);
 }
-document.getElementById('user-builder').addEventListener('submit', handleSubmit); // ifscore===0 start here to save info on game end
-let savedUser = JSON.stringify(userArray);
-localStorage.setItem('user',savedUser);
-let fetchedUser = localStorage.getItem('user');
-let parsedUser = JSON.parse(fetchedUser);
+// document.getElementById('user-builder').addEventListener('submit', handleSubmit); // ifscore===0 start here to save info on game end
+// let savedUser = JSON.stringify(userArray);
+// localStorage.setItem('user',savedUser);
+// let fetchedUser = localStorage.getItem('user');
+// let parsedUser = JSON.parse(fetchedUser);
 
 
 //**  RNG FUNCTIONS************************ */
@@ -53,6 +53,7 @@ function getRandomToken()
 {
   return tokens[Math.floor(Math.random() * tokens.length)];
 }     
+
 getRandomToken();
   
 
@@ -79,7 +80,7 @@ function handleSpin ()
   let box3 = getRandomToken();
 
   
-  console.log('strin', startingSpins);
+  console.log('string', startingSpins);
 
 
   boxOne.innerHTML = `${box1}`;
