@@ -28,8 +28,8 @@ body {
   top:50%;
   left:50%;
   z-index:-5;
-  width:100px;
-  height:100px;
+  width:0px;
+  height:0px;
 }
 
 /* make the star shape */
@@ -117,17 +117,179 @@ body {
 
 /* star positions */
 #star1 {
-  top:400px;
-  left:-300px
+  top:-100px;
+  left:-500px
 }
 #star2 {
-  top:400px;
-  left:300px
-}
-#star3 {
-  top:400px;
+  top:-200px;
   left:-400px
 }
+#star3 {
+  top:200px;
+  left:300px
+}
+#star4 {
+  top:-200px;
+  left:300px
+}
+#star5 {
+  top:400px;
+  left:100px
+}
+#star6 {
+  top:-600px;
+  left:-200px;
+}
+#star7 {
+  top:400px;
+  left:-500px;
+}
+#star8 {
+  top:-400px;
+  left:400px;
+}
+#star9 {
+  top:-500px;
+  left:100px;
+}
+#star10 {
+  top:200px;
+  left:-550px;
+}
+#star11 {
+  top:300px;
+  left:-300px;
+}
+#star12 {
+  top:200px;
+  left:-400px;
+}
+#star13 {
+  top:-500px;
+  left:-350px;
+}
+#star14 {
+  top:-400px;
+  left:-500px;
+}
+#star15 {
+  top:-200px;
+  left:-700px;
+}
+#star16 {
+  top:-450px;
+  left:200px;
+}
+#star17 {
+  top:100px;
+  left:600px;
+}
+#star18 {
+  top:300px;
+  left:700px;
+}
+#star19 {
+  top:250px;
+  left:500px;
+}
+#star20 {
+  top:-100px;
+  left:450px;
+}
+#star21 {
+  top:-300px;
+  left:650px;
+}
+#star22 {
+  top:-550px;
+  left:800px;
+}
+#star23 {
+  top:-600px;
+  left:550px;
+}
+#star24 {
+  top:200px;
+  left:-900px;
+}
+#star25 {
+  top: -50px;
+  left: 250px;
+}
+#star26 {
+  top: 100px;
+  left:-800px;
+}
+#star27 {
+  top:-450px;
+  left:-800px;
+}
+#star28 {
+  top:300px;
+  left:-600px;
+}
+#star29 {
+  top:100px;
+  left:-600px;
+}
+#star30 {
+  top:-50px;
+  left:700px;
+}
+#star31 {
+  top:-400px;
+  left:-650px;
+}
+#star32 {
+  top:-300px;
+  left:-900px;
+}
+#star33 {
+  top:-550px;
+  left:-1000px;
+}
+#star34 {
+  top: -55px;
+  left:300px;
+}
+#star35 {
+  top:400px;
+  left:-750px;
+}
+#star36 {
+  top:-50px;
+  left:-1000px;
+}
+#star37 {
+  top:-200px;
+  left:550px;
+}
+#star38 {
+  top: 350px;
+  left:400px;
+}
+#star39 {
+  top:400px;
+  left:-100px;
+}
+#star40 {
+  top:-600px;
+  left:-650px;
+}
+#star41 {
+  top:350px;
+  left:-950px;
+}
+#star42 {
+  top:-400px;
+  left:550px;
+}
+
+
+
+
+
+
 
 /* header */
 
@@ -164,6 +326,7 @@ main  {
 
 /* machine */
 #machine {
+  /* display:none; */
   margin:3em auto 2em auto;
   width:600px;
   height:825px;
