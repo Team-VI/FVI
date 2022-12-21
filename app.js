@@ -6,8 +6,11 @@ let boxOne = document.getElementById('box-one');
 let boxTwo = document.getElementById('box-two');
 let boxThree = document.getElementById('box-three');
 
-let recordTable = document.getElementById('record-table');
+
 let playButton = document.getElementById('play-button');
+let scoreWindow = document.getElementById('score-window');
+
+let recordTable = document.getElementById('record-table');
 //**************GLOBALS***********************************/////////
 
 
