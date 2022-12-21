@@ -2,25 +2,50 @@
 
 //****************** Dom
 
-let boxOne = document.getElementById('box-one');
-let boxTwo = document.getElementById('box-two');
-let boxThree = document.getElementById('box-three');
+let boxOne = document.getElementById('box1');
+let boxTwo = document.getElementById('box2');
+let boxThree = document.getElementById('box3');
 
 
-let playButton = document.getElementById('play-button');
+let playButton = document.getElementById('mainBet');
 let scoreWindow = document.getElementById('score-window');
 
 let recordTable = document.getElementById('record-table');
+
+
+
+let userArray = [];
 //**************GLOBALS***********************************/////////
 
 
-let startingSpins = 10;
+let startingSpins = 20;
 let score = 0;
 
-// let boxArray =[box1, box2, box3];
+
 
 let tokens = ['😈','👻','🎃'];
-// const tokens = [1,2,3,4,5,6];
+
+
+function User(name, score) {
+  this.name = name;
+  this.score = score;
+}
+
+function handleSubmit(event){
+  event.preventDefault();
+  console.dir(event.target);
+  let name = event.target.userName.value;
+  console.log(name);
+  let newUser = new User(name);
+  userArray.push(newUser);
+  console.log(newUser);
+}
+document.getElementById('user-builder').addEventListener('submit', handleSubmit); // ifscore===0 start here to save info on game end
+let savedUser = JSON.stringify(userArray);
+localStorage.setItem('user',savedUser);
+let fetchedUser = localStorage.getItem('user');
+let parsedUser = JSON.parse(fetchedUser);
+
 
 //**  RNG FUNCTIONS************************ */
 
@@ -28,21 +53,22 @@ function getRandomToken()
 {
   return tokens[Math.floor(Math.random() * tokens.length)];
 }     
-  
 getRandomToken();
   
 
-  // function User(name, age){
-  //     this.name = name;
-  //     this.age=age;
-  //     this.score = 0;
-  //     User.userArray.push(this);
-  //   }
+//******************** getting users info */
 
 
 
-//Store.prototype.getCust = function () {  return Math.floor(Math.random() * (this.maxCust - this.minCust + 1) +this.minCust);};
-// let box1 = randomToken;
+function getUserName(){
+  let userName = prompt('What`s  your Name').toLowerCase();
+  while (userName === ('')){
+    userName = prompt('Try Again')
+  }
+}
+
+console.log(getUserName);
+  
 
 function handleSpin ()
 {
@@ -65,7 +91,9 @@ function handleSpin ()
   }
   else 
   {
-    alert(`You are done, final score: ${score}`);}
+    alert(`You are done, final score: ${score}`);
+  // User.prototype.push(score);
+  }
 }
 
 function calculateScore(box1, box2, box3){
@@ -94,12 +122,7 @@ function calculateScore(box1, box2, box3){
 
 
 // //CONSTRUCTOR
-// function User(name, age){
-//   this.name=name;
-//   this.age=age;
-//   this.score = 0;
-//   User.userArray.push(this);
-// }
+
 
 // let userArray = [];
 

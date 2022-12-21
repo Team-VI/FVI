@@ -285,12 +285,6 @@ body {
   left:550px;
 }
 
-
-
-
-
-
-
 /* header */
 
 header {
@@ -319,9 +313,11 @@ header {
 
 /* main */
 main  {
+
   /* display:flex;
   flex-direction:column;
   align-items:center; */
+
 }
 
 /* machine */
@@ -496,10 +492,6 @@ main  {
   border-right:2px solid var(--gray);
 }
 
-
-
-
-
 #machineBaseChrome {
   width:640px;
   height:10px;
@@ -535,7 +527,9 @@ main  {
   position:relative;
   width:150px;
   height:380px;
+
   z-index:-4;
+
   top:-570px;
   left:560px;
   /* background-color:var(--light-yellow); */
@@ -578,6 +572,3 @@ main  {
   outline:2px solid var(--black);
 
 }
-
-
-
