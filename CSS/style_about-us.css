@@ -1,0 +1,129 @@
+:root {
+  --black: #0e0e0e;
+  --dark-blue: #3A81FF;
+  --light-blue: #9BEAFF;
+  --dark-red: #DA1F00;
+  --dark-green: #3C8C05;
+  --dark-yellow: #FDC71B;
+  --light-yellow: #FEF669;
+  --dark-chrome: #AEC1CB;
+  --light-chrome: #E8ECEF;
+  --white: #f5f2f2;
+  font-size: 16px;
+}
+
+body {
+ box-sizing:border-box;
+}
+
+body {
+  background:var(--white);
+}
+
+
+/* header */
+
+header {
+  margin: 0 auto 2vh auto;
+}
+
+#sidebarContainer {
+  margin:2vh 0 2vh 0;
+}
+
+#sidebarContainer nav ul {
+  display:flex;
+  flex-direction:row;
+  justify-content:space-evenly;
+}
+
+#sidebarContainer nav ul a {
+  text-decoration:none;
+  color:#0e0e0e;
+  font-size:1.25em;
+}
+
+#sidebarContainer nav ul li:hover {
+  cursor: pointer;
+}
+
+#bannerTitle {
+  text-align:center;
+  color:red;
+  font-size:2em;
+}
+
+
+/* body */
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 0px;
+  justify-items:center;
+  /* border:10px solid red; */
+}
+
+@media (max-width:800px ){
+  main {grid-row-gap:0px;}
+}
+
+@media (max-width:1000px ){
+  main {grid-row-gap:10px;}
+}
+
+@media (max-width:1500px ){
+  main {grid-row-gap:50px;}
+}
+
+.bioSection {
+  /* border:10px solid green; */
+  margin:2vh 20px 0 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 0px;
+  align-items:center;
+  max-width:900px;
+  padding:20px;
+  transition: background 2s;
+  border-radius:30px;
+}
+
+.bioSection:hover {
+  background:var(--dark-chrome);
+}
+
+
+
+.bioSection h2 {
+  font-size:1.5em;
+  width:200px;
+  /* border:2px solid orange; */
+  grid-area: 1 / 1 / 2 / 2;
+  text-align:right;
+}
+
+.bioSection img {
+  width:150px;
+  height:150px;
+  object-fit:cover;
+  /* border:2px solid brown; */
+  grid-area: 1 / 2 / 2 / 3;
+  animation:border 10s infinite;
+  border-radius:10%;
+}
+
+@keyframes border {
+  0%  {outline:5px solid var(--dark-blue);}
+  33% {outline:5px solid var(--dark-green);}
+  66% {outline:5px solid var(--dark-red);}
+  100% {outline:5px solid var(--dark-blue);}
+} 
+
+.bioSection p {
+  /* border:2px solid yellow; */
+  grid-area: 1 / 3 / 2 / 7;
+  text-align:justify;
+}
