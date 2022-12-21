@@ -37,11 +37,15 @@ function handleSubmit(event){
   event.preventDefault();
   console.dir(event.target);
   let name = event.target.userName.value;
-  console.log(name);
-  let newUser = new User(name);
+  let newUser = new User(name,score);
+
   userArray.push(newUser);
-  console.log(newUser);
+
+  let savedUser = JSON.stringify(userArray);
+  localStorage.setItem('user', savedUser);
 }
+
+
 
 document.getElementById('user-builder').addEventListener('submit', handleSubmit);
 
@@ -102,7 +106,6 @@ function handleSpin ()
   else 
   {
     alert(`You are done, final score: ${score}`);
-  // User.prototype.push(score);
   }
 }
 
@@ -185,13 +188,21 @@ function calculateScore(box1, box2, box3){
 
 
 
-// //TODO: user number gen on button push
-// //TODO: winning number gen on spin
-// //TODO: work array of 3 into both poss.
+
 
 // //TODO:  attatch form to constructor for user input
-// //TODO: 
-// //TODO:
-// //TODO:
+
+
+
+let fetchedUser = localStorage.getItem('user');
+let parsedUser = JSON.parse(fetchedUser);
+
+if (parsedUser) {
+  for (let i = 0; i < userArray.length; i++){
+    userArray[i].name = parsedusers[i].name;
+    userArray[i].score = parsedusers[i].score;
+  }
+}
+
 
 playButton.addEventListener('click', handleSpin);
