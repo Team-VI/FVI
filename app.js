@@ -94,6 +94,7 @@ function handleSpin ()
   boxOne.innerHTML = `${box1}`;
   boxTwo.innerHTML = `${box2}`;
   boxThree.innerHTML = `${box3}`;
+  scoreWindow.innerHTML =`Score:${score}`;
 
   calculateScore(box1, box2, box3);
   startingSpins --;
