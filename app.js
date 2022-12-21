@@ -31,6 +31,8 @@ function User(name, score) {
   this.score = score;
 }
 
+
+
 function handleSubmit(event){
   event.preventDefault();
   console.dir(event.target);
@@ -40,7 +42,12 @@ function handleSubmit(event){
   userArray.push(newUser);
   console.log(newUser);
 }
-// document.getElementById('user-builder').addEventListener('submit', handleSubmit); // ifscore===0 start here to save info on game end
+
+document.getElementById('user-builder').addEventListener('submit', handleSubmit);
+
+
+
+// ifscore===0 start here to save info on game end
 // let savedUser = JSON.stringify(userArray);
 // localStorage.setItem('user',savedUser);
 // let fetchedUser = localStorage.getItem('user');
@@ -66,9 +73,10 @@ function getUserName(){
   while (userName === ('')){
     userName = prompt('Try Again')
   }
+  return userName;
 }
 
-console.log(getUserName);
+
   
 
 function handleSpin ()
