@@ -6,6 +6,9 @@
 
 .performanceNav {
   text-align: center;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-evenly;
 }
 
 .performanceHeaders {
@@ -41,6 +44,9 @@
 
 .resourcesNav {
   text-align: center;
+  display:flex;
+  flex-direction:row;
+  justify-content:space-evenly;
 }
 
 .resourcesHeaders h1{
@@ -51,10 +57,23 @@
   text-align: center; 
 }
 
-.resourcesSideLinks li {
-  margin: 50px;
-  padding: 25px 0px 25px 0px; 
- }
+.row1{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.row2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.row3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
 article {
   display: flex;
