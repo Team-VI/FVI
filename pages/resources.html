@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,47 +9,104 @@
   <link rel="stylesheet" href="../CSS/style.css">
   <title>RESOURCES</title>
 </head>
-<body>   
+
+<body>
 
   <header class="resourcesHeaders">
 
     <h1>Resources</h1>
 
-  <nav class="resourcesNav">
-    <a href="../index.html">HOME</a>
-    <a href="resources.html">RESOURCES</a>
-    <a href="about.html">ABOUT US</a>
-  </nav>
+    <nav class="resourcesNav">
+      <a href="../index.html">HOME</a>
+      <a href="resources.html">RESOURCES</a>
+      <a href="about.html">ABOUT US</a>
+    </nav>
 
-  <article> 
+    <article>
 
-  <aside class="resourcesSideLinks">
-    <ol>
-    <li><button><a id="problems" href="https://josedanielmartinez.github.io/gambling-dangers/relationships.html">Relationship Problems</a></button></li>
-    <li><button><a id="legal" href="https://josedanielmartinez.github.io/gambling-dangers/legal_issues.html">Legal Issues</a></li></button></li>
-    <li><button><a id="bank" href="https://josedanielmartinez.github.io/gambling-dangers/bankruptcy.html">Bankruptcy</a></li></button></li>
-    <li><button><a id="performance" href="https://josedanielmartinez.github.io/gambling-dangers/poor_work_performance.html">Poor Work Performance</a></button></li>
-    <li><button><a id="health" href="https://josedanielmartinez.github.io/gambling-dangers/poor_health.html">Poor General Health</a></button></li>
-  </ol>
-  </aside>
-  
-  <iframe src="https://josedanielmartinez.github.io/gambling-dangers/relationships.html" height="1000" width="350%" title="Iframe Example"></iframe>
+      <aside class="resourcesSideLinks">
+        <ol>
+          <li><button><a id="problems">Relationship Problems</a></button></li>
+          <li><button><a id="legal">Legal Issues</a></li></button></li>
+          <li><button><a id="bank">Bankruptcy</a></li></button></li>
+          <li><button><a id="performance">Poor Work Performance</a></button></li>
+          <li><button><a id="health">Poor
+                General Health</a></button></li>
+        </ol>
+      </aside>
 
-  </article>
-<!-- 
+      <iframe id="frame" sr = "" width = 100% height="1000" width="350%" title="Iframe Example"></iframe>
+
+    </article>
+
     <script>
+      // ==================DOM VARIABLES===================
+
+      let iframe = document.getElementById("frame");
+      console.log("41", iframe)
+
       let relationshipProblems = document.getElementById("problems")
-      let legal_issues = document.getElementById("legal")
+      let legalIssues = document.getElementById("legal")
+
       let bankRuptcy = document.getElementById("bank")
-      let poor_work_performance = document.getElementById("performance")
+
+      let poorWorkPerformance = document.getElementById("performance")
+
+      let poorGeneralHealth = document.getElementById("health")
+
+      // ==================  functions below ===================
+
+      relationshipProblems.addEventListener("click", function (e) {
+        let iframe = document.getElementById("frame")
+        console.log("41", iframe);
+        console.log("click");
+        iframe.src = "https://josedanielmartinez.github.io/gambling-dangers/relationships.html"
+      })
 
 
-    </script> -->
+      legalIssues.addEventListener("click", function (e) {
+        let iframe = document.getElementById("frame")
+        console.log("41", iframe);
+        console.log("click");
+        iframe.src = "https://josedanielmartinez.github.io/gambling-dangers/legal_issues.html"
+      })
+
+      bankRuptcy.addEventListener("click", function (e) {
+        let iframe = document.getElementById("frame")
+        console.log("41", iframe);
+        console.log("click");
+        iframe.src = "https://josedanielmartinez.github.io/gambling-dangers/bankruptcy.html"
+      })
 
 
-    <script src="../app.js"></script>
+      performance.addEventListener("click", function (e) {
+        let iframe = document.getElementById("frame")
+        console.log("41", iframe);
+        console.log("click");
+        iframe.src = "https://josedanielmartinez.github.io/gambling-dangers/poor_work_performance.html"
+      })
+
+      poorWorkPerformance.addEventListener("click", function (e) {
+        let iframe = document.getElementById("frame")
+        console.log("41", iframe);
+        console.log("click");
+        iframe.src = "https://josedanielmartinez.github.io/gambling-dangers/poor_health.html"
+      })
+
+      // poorGeneralHealth.addEventListener("click", function (e) {
+      //   let iframe = document.getElementById("frame")
+      //   console.log("41", iframe);
+      //   console.log("click");
+      //   iframe.src = "https://josedanielmartinez.github.io/gambling-dangers/poor_generalhealth.html" 
+      // })
+
+    </script>
+
+
+    <!-- <script src="../app.js"></script> -->
     <footer>
       <p></p>
     </footer>
 </body>
+
 </html>
