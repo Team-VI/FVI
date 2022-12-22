@@ -1,42 +1,95 @@
-'use strict';
- //************************DOM */
+// 'use strict';
+//  //************************DOM */
 
-let recordTable = document.getElementById('performanceTable');
+// let recordTable = document.getElementById('performanceTable');
+// let userArray = [];
 
-//*************************** Recording users result to the table *************************/
+// //**************Parsed data */
 
-function header(){ /*****Stand alone function */
+// // let leaderBoard = localStorage.getItem('');
+// // if (leaderBoard) {
+// //   let parseleaderInfo = JSON.parse(leaderBoard);
+// //   for (let linfo of parseleaderInfo) {
+// //     let name = linfo.name;
+// //     let score = linfo.score;
+// //     makeleaderScoreInfo(name, score);
+// //   }
+// // }
 
-  let tableRow = document.createElement('tr');
-  recordTable.appendChild(tableRow);
 
-  let tableHeader = document.createElement('th');
-  tableHeader.textContent = 'Player';
-  tableRow.appendChild(tableHeader);
+// let fetchedUser = localStorage.getItem('user');
+// let parsedUser = JSON.parse(fetchedUser);
+// let fetchedScore = localStorage.getItem('score');
+// let parsedScore = JSON.parse(fetchedScore);
+// localStorage.removeItem('user');
+// localStorage.removeItem('score');
 
-  tableHeader = document.createElement('th');
-  tableHeader.textContent = 'Score';
-  tableRow.appendChild(tableHeader);
-}
 
-header();
+// function UserScore(userName, score){
+//   this.userName = userName;
+//   this.score = score;
+// }
+// createUserObj(fetchedUser, fetchedScore);
+// storeUserArray();
 
-// function recordResult()     /**********Recording current result */
-// {
+// function createUserObj(userName, score){
+//   let userObj = new UserScore(userName, score);
+//   userArray.push(userObj);
+//   console.log(userArray);
+// }
+// function storeUserArray(){
+//   let stringifiedArray = JSON.stringify(userArray);
+//   localStorage.setItem('usersStorage', stringifiedArray);
+// }  
+
+
+
+
+
+
+// //*************************** Recording users result to the table 
+
+
+// //*************************/
+
+
+
+
+
+
+
+// function header(){ /*****Stand alone function */
+
 //   let tableRow = document.createElement('tr');
 //   recordTable.appendChild(tableRow);
 
-//   tableCell = document.createElement('td');
-//   tableCell.textContent = User.name;
-//   tableRow.appendChild(tableCell);
+//   let tableHeader = document.createElement('th');
+//   tableHeader.textContent = 'Player';
+//   tableRow.appendChild(tableHeader);
 
-//   tableCell = document.createElement('td');
-//   tableCell.textContent = User.score;
-//   tableRow.appendChild(tableCell);
-
+//   tableHeader = document.createElement('th');
+//   tableHeader.textContent = 'Score';
+//   tableRow.appendChild(tableHeader);
 // }
 
-// recordResult();
+// header();
+
+// // function recordResult()     /**********Recording current result */
+// // {
+// //   let tableRow = document.createElement('tr');
+// //   recordTable.appendChild(tableRow);
+
+// // //   tableCell = document.createElement('td');
+// // //   tableCell.textContent = User.name;
+// // //   tableRow.appendChild(tableCell);
+
+// // //   tableCell = document.createElement('td');
+// // //   tableCell.textContent = User.score;
+// // //   tableRow.appendChild(tableCell);
+
+// // // }
+
+// // recordResult();
 
 
 

@@ -2,7 +2,8 @@
 
 
 //******************DOM********************/
-
+let recordTable = document.getElementById('performanceTable');
+let userArray = [];
 
 let boxOne = document.getElementById('box1');
 let boxTwo = document.getElementById('box2');
@@ -19,7 +20,7 @@ let spinDisplay = document.querySelector('#spinDisplay');
 
 
 
-let userArray = [];
+
 let startingSpins = 20;
 let score = 0;
 let tokens = ['😈','👻','🎃'];
@@ -38,26 +39,6 @@ function User(name, score) {
 //**************HANDLER-FUNCTIONS***********************************/////////
 
 
-function handleSubmit(event){
-  event.preventDefault();
-  console.dir(event.target);
-  let name = event.target.userName.value;
-  let newUser = new User(name,score);
-
-  userArray.push(newUser);
-}
-
-
-// document.getElementById('user-builder').addEventListener('submit', handleSubmit);
-
-
-
-// ifscore===0 start here to save info on game end
-// let savedUser = JSON.stringify(userArray);
-// localStorage.setItem('user',savedUser);
-// let fetchedUser = localStorage.getItem('user');
-// let parsedUser = JSON.parse(fetchedUser);
-
 
 //**********RNG-FUNCTIONS************************ */
 
@@ -70,13 +51,6 @@ function getRandomToken()
 //*******************GETTING-USER-INFO*******/
 
 
-// function getUserName(){
-//   let userName = prompt('What`s your Name?').toLowerCase();
-//   while (userName === ('')){
-//     userName = prompt('Try Again')
-//   }
-//   return userName;
-// }
 
 
 function handleSpin ()
@@ -130,25 +104,121 @@ function calculateScore(box1, box2, box3){
 
 }
 
-
-// //TODO:  attatch form to constructor for user input
-
-
+let usersInfo = localStorage.getItem('usersStorage');
+if (usersInfo){
+  let parsedUserInfo = JSON.parse(usersInfo);
+  for (let usersStorage of parsedUserInfo) {
+    let name = usersStorage.userName;
+    let score = usersStorage.score;
+    createUserObj(name, score);
+  }
+}
 
 let fetchedUser = localStorage.getItem('user');
 let parsedUser = JSON.parse(fetchedUser);
 let fetchedScore = localStorage.getItem('score');
 let parsedScore = JSON.parse(fetchedScore);
+localStorage.removeItem('user');
+localStorage.removeItem('score');
+
+
+function UserScore(userName, score){
+  this.userName = userName;
+  this.score = score;
+}
+if (fetchedUser !== null && fetchedScore !== null){
+  createUserObj(fetchedUser, fetchedScore);
+}
+
+storeUserArray();
+
+function createUserObj(userName, score){
+  let userObj = new UserScore(userName, score);
+  userArray.push(userObj);
+  console.log(userArray);
+}
+function storeUserArray(){
+  let stringifiedArray = JSON.stringify(userArray);
+  localStorage.setItem('usersStorage', stringifiedArray);
+}  
+
+
+//*************************** Recording users result to the table 
+
+
+//*************************/
+
+
+
+
+
+
+
+function header(){ /*****Stand alone function */
+
+  let tableRow = document.createElement('tr');
+  recordTable.appendChild(tableRow);
+
+  let tableHeader = document.createElement('th');
+  tableHeader.textContent = 'Player';
+  tableRow.appendChild(tableHeader);
+
+  tableHeader = document.createElement('th');
+  tableHeader.textContent = 'Score';
+  tableRow.appendChild(tableHeader);
+}
+
+header();
+
+// function recordResult()     /**********Recording current result */
+// {
+//   let tableRow = document.createElement('tr');
+//   recordTable.appendChild(tableRow);
+
+// //   tableCell = document.createElement('td');
+// //   tableCell.textContent = User.name;
+// //   tableRow.appendChild(tableCell);
+
+// //   tableCell = document.createElement('td');
+// //   tableCell.textContent = User.score;
+// //   tableRow.appendChild(tableCell);
+
+// // }
+
+// recordResult();
+
+
+
+
+
+
+
+
+
+
+
+
+
+// //TODO:  attatch form to constructor for user input
+
+
+
+// let fetchedUser = localStorage.getItem('user');
+// let parsedUser = JSON.parse(fetchedUser);
+// let fetchedScore = localStorage.getItem('score');
+// let parsedScore = JSON.parse(fetchedScore);
+
+
 
 
 // userDisplay.textContent=`test${parsedUser} and ${parsedScore} `;
 
-if (parsedUser) {
-  for (let i = 0; i < userArray.length; i++){
-    userArray[i].name = parsedusers[i].name;
-    userArray[i].score = parsedusers[i].score;
-  }
-}
+// if (parsedUser) {
+//   for (let i = 0; i < userArray.length; i++){
+//     userArray[i].name = parsedusers[i].name;
+//     userArray[i].score = parsedusers[i].score;
+//   }
+// }
 
 
 playButton.addEventListener('click', handleSpin);
