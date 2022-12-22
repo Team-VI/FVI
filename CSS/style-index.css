@@ -262,7 +262,7 @@ body {
 }
 #star37 {
   top:-200px;
-  left:550px;
+  left:550px; 
 }
 #star38 {
   top: 350px;
@@ -304,11 +304,15 @@ header {
 #sidebarContainer nav ul a {
   text-decoration:none;
   color:#0e0e0e;
-  font-size:1.25em;
+  font-family:"Rye", serif;
+  font-weight: 400px;
+  letter-spacing: 0.05em;
+  font-size:2em;
 }
 
 #sidebarContainer nav ul li:hover {
   cursor: pointer;
+  color:var(--white);
 }
 
 /* main */
@@ -361,21 +365,85 @@ main  {
   position:relative;
   top:20px;
   left:20px;
-  background:var(--dark-yellow);
+  background:linear-gradient(45deg,var(--dark-red),var(--dark-yellow),var(--dark-green),var(--dark-blue));
   outline:2px solid var(--black);
+
+}
+.flex-strip1 {
+  width: 510px;
+  height: max-content;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  top:0px;
+  left:0px;
+}
+.flex-strip2 {
+  width: 510px;
+  height: max-content;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+  top:0px;
+  left:0px;
+}
+.circle-grey {
+  background-color:var(--dark-yellow);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  animation: lights 2s infinite;
+}
+
+.circle-gold {
+  background-color: var(--light-yellow);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  animation: lights 1s infinite;
+}
+@keyframes lights {
+  0% {
+    left: 15px; opacity: 100%;
+  }
+  25% {
+    left: 30px; opacity: 0%;
+  }
+  50% {
+    left: 60px; opacity: 100%;
+  }
+  75% {
+    left: 120px; opacity: 0%;
+  }
+  100% {
+    left: 150px; opacity: 100%;
+  }
+}
+
+.marquee {
+  text-align:center;
+  vertical-align:middle;
+  width:510px;
+  height:45px;
   display:flex;
   flex-direction:row;
-  flex-wrap:nowrap;
   justify-content:center;
   align-items:center;
 }
 
-#innerBanner h2 {
-  font-size:3em;
-  font-weight:bold;
-  color:var(--light-black);
+#gameTitle {
+  font-size: 1.6em;
+  text-align:center;
+  color:var(--white);
+  font-family:"Rye", serif;
+  font-weight: 400px;
+  letter-spacing: 0.05em;
+  text-shadow: 10px 5px 10px #132022;
 }
 
+
+
+/* game window */
 #chromeWindow {
   width:550px;
   height:450px;
@@ -485,11 +553,17 @@ main  {
   height:60px;
   outline:2px solid var(--black);
   background-color:var(--dark-yellow);
-  font-size:2em;
+  font-size:1.5em;
   border-top:5px solid var(--dark-yellow);
   border-left:2px solid var(--gray);
   border-bottom:5px solid var(--gray);
   border-right:2px solid var(--gray);
+  font-family:"Rye", serif;
+  font-weight: 400px;
+  letter-spacing: 0.05em;
+}
+#mainBet:hover {
+  color:var(--dark-red);
 }
 
 #machineBaseChrome {
