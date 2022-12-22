@@ -5,30 +5,36 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../CSS/reset.css">
-  <link rel="stylesheet" href="../CSS/style.css">
-  <title>MY PERFORMANCE</title>
+  <link rel="stylesheet" href="../CSS/style-performance.css">
+  <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Rye">
+  <title>YOUR PERFORMANCE</title>
 </head>
 <body> 
-
-  <nav class="performanceNav">
-    <a href="../index.html">HOME</a>
-    <a href="resources.html">RESOURCES</a>
-    <a href="about.html">ABOUT US</a>
-  </nav>
-
-  <header class="performanceHeaders">
-
-    <h1>My Performance</h1>
-    <h2>Current Win Probability</h2>
-    <h3>Chart Tracking</h3>
-    <img src="https://place-hold.it/800x500/ddd">
-
-  
-
+  <header id="headerContainer">
+    <div class="sidebar" id="sidebarContainer">
+      <nav>
+        <ul>
+          <a href="../index.html"><li>GAME</li></a>
+          <a href="performance.html"><li>PERFORMANCE</li></a>
+          <a href="resources.html"><li>RESOURCES</li></a>
+          <a href="about.html"><li>ABOUT US</li></a>
+        </ul>
+      </nav>
+    </div>
   </header>
+  <main>
+
+    <h1 class="performanceTitle">PERFORMANCE</h1>
+    <section id="canvasContainer">
+      <table id="performanceTable" width="600" height="400"></table>
+    </section>
+
+  </main>
+
 
   
-  
-  <script src="../app.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.0.1/dist/chart.umd.min.js"></script>
+  <script src="../app-performance.js" defer></script>
 </body>
 </html>
