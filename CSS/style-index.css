@@ -646,3 +646,49 @@ main  {
   outline:2px solid var(--black);
 
 }
+
+#box1 {
+  width: 106px;
+  height: 180px;
+  background-color:var(--light-chrome);
+  border-radius:10px;
+  font-size: 5em;
+  text-align: center;
+}
+#box2 {
+  width: 106px;
+  height: 180px;
+  background-color:var(--light-chrome);
+  border-radius:10px;
+  font-size: 5em;
+  text-align: center;
+}
+#box3 {
+  width: 106px;
+  height: 180px;
+  background-color:var(--light-chrome);
+  border-radius:10px;
+  font-size: 5em;
+  text-align: center;
+}
+
+#mainBet {
+  width:70px;
+  height:60px;
+  outline:2px solid var(--black);
+  background-color:var(--dark-yellow);
+  font-size:2em;
+  border-top:5px solid var(--dark-yellow);
+  border-left:2px solid var(--gray);
+  border-bottom:5px solid var(--gray);
+  border-right:2px solid var(--gray);
+  transition-duration: 0.4s;
+}
+#mainBet:hover {
+  background-color:var(--dark-red);
+}
+#mainBet:active {
+  background-color: #000000;
+  box-shadow: 0 5px #666;
+  transform: translateY(9px);
+}
