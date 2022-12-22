@@ -43,9 +43,6 @@ function handleSubmit(event){
   let newUser = new User(name,score);
 
   userArray.push(newUser);
-
-  let savedUser = JSON.stringify(userArray);
-  localStorage.setItem('user', savedUser);
 }
 
 
@@ -71,13 +68,13 @@ function getRandomToken()
 //*******************GETTING-USER-INFO*******/
 
 
-function getUserName(){
-  let userName = prompt('What`s your Name?').toLowerCase();
-  while (userName === ('')){
-    userName = prompt('Try Again')
-  }
-  return userName;
-}
+// function getUserName(){
+//   let userName = prompt('What`s your Name?').toLowerCase();
+//   while (userName === ('')){
+//     userName = prompt('Try Again')
+//   }
+//   return userName;
+// }
 
 
 function handleSpin ()
@@ -114,7 +111,10 @@ function handleSpin ()
   }
   else 
   {
-    alert(`Game over! Final score: ${score}`);
+    let userName = prompt(`Game Over. Final score: ${score}. Please enter your Name to save Result`);
+    window.location.reload();
+    let savedUser = JSON.stringify(userName);
+    localStorage.setItem('user', savedUser);
   }
 }
 
