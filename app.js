@@ -13,8 +13,10 @@ let scoreDisplay = document.querySelector('#scoreDisplay');
 let spinDisplay = document.querySelector('#spinDisplay');
 let recordTable = document.getElementById('record-table');
 
+let userDisplay = document.getElementById('userDisplay');
 
 //**************GLOBALS-VARIABLES***********************************/////////
+
 
 
 let userArray = [];
@@ -112,9 +114,11 @@ function handleSpin ()
   else 
   {
     let userName = prompt(`Game Over. Final score: ${score}. Please enter your Name to save Result`);
-    window.location.reload();
     let savedUser = JSON.stringify(userName);
+    let savedScore = JSON.stringify(score);
     localStorage.setItem('user', savedUser);
+    localStorage.setItem('score', savedScore);
+    window.location.reload();
   }
 }
 
@@ -202,6 +206,11 @@ function calculateScore(box1, box2, box3){
 
 let fetchedUser = localStorage.getItem('user');
 let parsedUser = JSON.parse(fetchedUser);
+let fetchedScore = localStorage.getItem('score');
+let parsedScore = JSON.parse(fetchedScore);
+
+
+userDisplay.textContent=`test${parsedUser} and ${parsedScore} `;
 
 if (parsedUser) {
   for (let i = 0; i < userArray.length; i++){
