@@ -20,6 +20,8 @@ body {
   box-sizing:border-box;
   height:100vh;
   background-image:repeating-conic-gradient(var(--light-blue) 0 9deg, var(--dark-blue) 9deg 18deg);
+  background-repeat: no-repeat;
+  background-color:var(--dark-blue);
 }
 
 /* star background */
