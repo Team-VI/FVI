@@ -1,29 +1,30 @@
 'use strict';
 
-//****************** Dom
+
+//******************DOM********************/
+
 
 let boxOne = document.getElementById('box1');
 let boxTwo = document.getElementById('box2');
 let boxThree = document.getElementById('box3');
 
-
 let playButton = document.getElementById('mainBet');
-let scoreWindow = document.getElementById('score-window');
-
+let scoreDisplay = document.querySelector('#scoreDisplay');
+let spinDisplay = document.querySelector('#spinDisplay');
 let recordTable = document.getElementById('record-table');
 
 
+//**************GLOBALS-VARIABLES***********************************/////////
+
 
 let userArray = [];
-//**************GLOBALS***********************************/////////
-
-
 let startingSpins = 20;
 let score = 0;
-
-
-
 let tokens = ['😈','👻','🎃'];
+
+
+
+//**************CONSTRUCTOR-FUNCTIONS***********************************/////////
 
 
 function User(name, score) {
@@ -31,6 +32,8 @@ function User(name, score) {
   this.score = score;
 }
 
+
+//**************HANDLER-FUNCTIONS***********************************/////////
 
 
 function handleSubmit(event){
@@ -46,7 +49,6 @@ function handleSubmit(event){
 }
 
 
-
 document.getElementById('user-builder').addEventListener('submit', handleSubmit);
 
 
@@ -58,30 +60,25 @@ document.getElementById('user-builder').addEventListener('submit', handleSubmit)
 // let parsedUser = JSON.parse(fetchedUser);
 
 
-//**  RNG FUNCTIONS************************ */
+//**********RNG-FUNCTIONS************************ */
 
 function getRandomToken() 
 {
   return tokens[Math.floor(Math.random() * tokens.length)];
 }     
-
-getRandomToken();
   
 
-//******************** getting users info */
-
+//*******************GETTING-USER-INFO*******/
 
 
 function getUserName(){
-  let userName = prompt('What`s  your Name').toLowerCase();
+  let userName = prompt('What`s your Name?').toLowerCase();
   while (userName === ('')){
     userName = prompt('Try Again')
   }
   return userName;
 }
 
-
-  
 
 function handleSpin ()
 {
@@ -91,31 +88,40 @@ function handleSpin ()
   let box2 = getRandomToken();
   let box3 = getRandomToken();
 
-  
-  console.log('string', startingSpins);
 
-
+  /* render reels */
   boxOne.innerHTML = `${box1}`;
   boxTwo.innerHTML = `${box2}`;
   boxThree.innerHTML = `${box3}`;
-  scoreWindow.innerHTML =`Score:${score}`;
+
+  /* render the score */
+  if(score<100){
+    scoreDisplay.textContent =`Score:000`;
+  }else if(score>=100) {
+    scoreDisplay.textContent =`Score:${score}`;}
 
   calculateScore(box1, box2, box3);
   startingSpins --;
+
+  /* render the remaining spins */
+  if(startingSpins>99){
+    spinDisplay.textContent = `Spins:${startingSpins}`;
+  }else if(startingSpins<=99 && startingSpins>9){ spinDisplay.textContent = `Spins:0${startingSpins}`;
+  }else if(startingSpins<=9){
+    spinDisplay.textContent = `Spins:00${startingSpins}`;
+  }
+
   }
   else 
   {
-    alert(`You are done, final score: ${score}`);
+    alert(`Game over! Final score: ${score}`);
   }
 }
 
 function calculateScore(box1, box2, box3){
-  
   if (box1 === box2 && box2 === box3){
-  score = score + 100;
+  score += 100;
   } 
-
-  console.log(score);
   return score;
 
 }
