@@ -11,9 +11,9 @@ let boxThree = document.getElementById('box3');
 let playButton = document.getElementById('mainBet');
 let scoreDisplay = document.querySelector('#scoreDisplay');
 let spinDisplay = document.querySelector('#spinDisplay');
-let recordTable = document.getElementById('record-table');
+// let recordTable = document.getElementById('record-table');
 
-let userDisplay = document.getElementById('userDisplay');
+// let userDisplay = document.getElementById('userDisplay');
 
 //**************GLOBALS-VARIABLES***********************************/////////
 
@@ -48,7 +48,7 @@ function handleSubmit(event){
 }
 
 
-document.getElementById('user-builder').addEventListener('submit', handleSubmit);
+// document.getElementById('user-builder').addEventListener('submit', handleSubmit);
 
 
 
@@ -130,75 +130,6 @@ function calculateScore(box1, box2, box3){
 
 }
 
-// handleSpin();
-
-// console.log(box1);
-
-// console.log(spinFunction);
-
-
-
-// // const array = [1, 'hello', 5, 8];
-
-// // const result = getRandomItem(array);
-
-
-
-// //CONSTRUCTOR
-
-
-// let userArray = [];
-
-// let savedUser = JSON.stringify(userArray);
-// localStorage.setItem('user', savedUser);
-
-// let fetchedUser = localStorage.getItem('user');
-// let parsedUser = JSON.parse(fetchedUser);
-
-
-
-
-// //*************************** Recording users result to the table *************************/
-
-// function header(){ /*****Stand alone function */
-
-//   let tableRow = document.createElement('tr');
-//   recordTable.appendChild(tableRow);
-
-//   let tableHeader = document.createElement('th');
-//   tableHeader.textContent = 'Player';
-//   tableRow.appendChild(tableHeader);
-
-//   tableHeader = document.createElement('th');
-//   tableHeader.textContent = 'Score';
-//   tr.appendChild(tableHeader);
-// }
-
-// header();
-
-// function recordResult()     /**********Recording current result */
-// {
-//   let tableRow = document.createElement('tr');
-//   recordTable.appendChild(tableRow);
-
-//   tableCell = document.createElement('td');
-//   tableCell.textContent = User.name;
-//   tableRow.appendChild(tableCell);
-
-//   tableCell = document.createElement('td');
-//   tableCell.textContent = User.score;
-//   tableRow.appendChild(tableCell);
-
-// }
-
-// recordResult();
-
-
-
-
-
-
-
 
 // //TODO:  attatch form to constructor for user input
 
@@ -210,7 +141,7 @@ let fetchedScore = localStorage.getItem('score');
 let parsedScore = JSON.parse(fetchedScore);
 
 
-userDisplay.textContent=`test${parsedUser} and ${parsedScore} `;
+// userDisplay.textContent=`test${parsedUser} and ${parsedScore} `;
 
 if (parsedUser) {
   for (let i = 0; i < userArray.length; i++){
