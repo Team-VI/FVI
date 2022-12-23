@@ -77,7 +77,8 @@ function handleSpin ()
   /* render the remaining spins */
   if(startingSpins>99){
     spinDisplay.textContent = `Spins:${startingSpins}`;
-  }else if(startingSpins<=99 && startingSpins>9){ spinDisplay.textContent = `Spins:0${startingSpins}`;
+  }else if(startingSpins<=99 && startingSpins>9){ 
+    spinDisplay.textContent = `Spins:0${startingSpins}`;
   }else if(startingSpins<=9){
     spinDisplay.textContent = `Spins:00${startingSpins}`;
   }
@@ -85,23 +86,30 @@ function handleSpin ()
   }
   else 
   {
-    let userName = prompt(`Game Over. Final score: ${score}. Please enter your Name to save Result`);
+    let userName = prompt(`Game Over. Final score: ${score}. Please enter your name to save results.`);
     let savedUser = JSON.stringify(userName);
     let savedScore = JSON.stringify(score);
     localStorage.setItem('user', savedUser);
     localStorage.setItem('score', savedScore);
+
+    console.dir(savedUser);
+    // console.dir(savedScore);
     window.location.reload();
     
   }
 }
+
+
 
 function calculateScore(box1, box2, box3){
   if (box1 === box2 && box2 === box3){
   score += 100;
   } 
   return score;
-
 }
+
+
+
 
 let usersInfo = localStorage.getItem('usersStorage');
 if (usersInfo){
@@ -157,6 +165,7 @@ function header(){ /*****Stand alone function */
 
   let tableRow = document.createElement('tr');
   recordTable.appendChild(tableRow);
+
 
 
   let tableHeader = document.createElement('th');
