@@ -1,83 +1,212 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../CSS/reset.css">
+:root {
+  --black: #0e0e0e;
+  --dark-blue: #3A81FF;
+  --light-blue: #9BEAFF;
+  --dark-red: #DA1F00;
+  --dark-green: #3C8C05;
+  --dark-yellow: #FDC71B;
+  --light-yellow: #FEF669;
+  --dark-chrome: #AEC1CB;
+  --light-chrome: #E8ECEF;
+  --white: #f5f2f2;
+  font-size: 16px;
+}
 
-  <link rel="stylesheet" href="../CSS/style-about-us.css">
+/* header */
+header {
+  margin: -20px;
+  color: white;
+  width: 100%;
+  padding: 30px;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(-45deg, #e6fb04, #ff6600, #00ff66, #0077ff, #3C8C05, #3ac1ff, #099fff);
+}
+.flex-strip {
+  width: 98%;
+  height: max-content;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+}
+.circle-grey {
+background-color: #ffd900;
+height: 22px;
+width: 22px;
+border-radius: 50%;
+margin-top: -10px;
+animation: lights 2s infinite;
+}
 
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rye">
- <title>ABOUT Team FVI</title>
-</head>
-<body>
-  <header class="marquee">
-    <div class="marquee">About Team FVI</div>
-  </header>
-    <div class="sidebar" id="sidebarContainer">
-      <nav>
-        <ul>
-          <a href="../index.html"><li>GAME</li></a>
-          <a href="performance.html"><li>PERFORMANCE</li></a>
-          <a href="resources.html"><li>RESOURCES</li></a>
-        
-        </ul>
-      </nav>
-    </div>
-    
-  </header>
+.circle-gold {
+  background-color: yellow;
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  margin-top: -10px;
+  animation: lights 1s infinite;
 
-  <main>
-    <section class="bioSection" id="ahmedBio"> 
-      <!-- temparory image size for Ahmed -->
-      <h2 class="bioHeader">Ahmed Mohamed</h2>
-      <img class="bioImg" src="../image/cropped/Ahmed.jpg" alt="Image of Ahmed">
-      <p class="bioP">
-        Ahmed Mohamed is a aspiring developer who loves to learn. He spent over a year in Egypt studying the language. He is an entrepreneur who runs his own business. He wants to pursue higher education and obtain a degree in architecture.
-      </p>
-    </section>
+  }
+  @keyframes lights {
+    0% {
+      left: 15px; opacity: 100%;
+    }
+    25% {
+      left: 30px; opacity: 0%;
+    }
+    50% {
+      left: 60px; opacity: 100%;
+    }
+    75% {
+      left: 120px; opacity: 0%;
+    }
+    100% {
+      left: 150px; opacity: 100%;
+    }
+  }
 
-    <section class="bioSection" id="cherylBio">
-      <h2 class="bioHeader">Cheryl McCalop</h2>
-      <img class="bioImg" src="../image/cropped/Cheryl.jpg" alt="Image of Cheryl">
-      <p class="bioP">
-        Cheryl McCalop is a software developer in the Seattle area with experience in front-end web development, website deployment, and multimedia production. She has a B.A. in Political Science and Certificates of Completion  in Web Developer and Visual Communications. She has an ardent interest in creative pursuits and developing software that brings excitement, utility, visual appeal, and heighten awareness in all areas of industry.
-      </p>
-    </section>
+.marquee {
+  text-transform: capitalize;
+  white-space: nowrap;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+}
 
-    <section class="bioSection" id="jacobBio">
-      <h2 class="bioHeader">Jacob Bassett</h2>
-      <img class="bioImg" src="../image/cropped/Jacob.jpg" id="Image of Jacob">
-      <p class="bioP">Jacob Bassett is a Full-Stack Software Developer who enjoys exploring anything mechanical and the history that made our world. He has a Bachelors in Biotechnology from Utah Valley University, and a passed career as a Molecular Biologist studying the proteins that choose when to transcribe mRNA and from what genes.
-      </p>
-    </section>
+.marquee div {
+  padding: 15px;
+  font-size: 4rem;
+  font-family:"Rye", serif;
+  font-weight: 400px;
+  animation: animate 10s linear infinite;
+  padding-left: 100%;
+  display: inline-block;
+  letter-spacing: 0.08em;
+  text-shadow: 10px 5px 10px #132022;
+}
 
-    <section class="bioSection" id="joseBio">
-      <h2 class="bioHeader">Jose Martinez</h2>
-      <img class="bioImg" src="../image/cropped/Jose.jpg" alt="Image of Jose">
-      <p class="bioP">Jose D. Martinez is a Software Developer who enjoys designing great looking websites.  He holds masters degrees in Management and Human Resources from Troy University and a third from the National Defense University in Strategic Security Studies.  He recently retired from the US Army following two decades of service and volunteers his free time between working as a Social Media Manager for a veteran and first responder non-profit and whenever possible, at his local soup kitchen feeding the homeless.
-      </p>
-    </section>
+@keyframes animate {
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
 
-    <section class="bioSection" id="tyBio">
-      <h2 class="bioHeader">Ty Aponte</h2>
-      <img class="bioImg" src="../image/cropped/Ty.jpg" alt="Image of Ty">
-      <p class="bioP">Ty Aponte is  Software Developer who enjoys digging into back end problems and making math do dynamic things. They are an ex Army Lab Tech and currently maintain a Radiology license.</p>
-    </section>
+/*about us body section*/
 
-    <section class="bioSection" id="yuriiBio">
-      <h2 class="bioHeader">Yurii Hlukhyi
-      </h2>
-      <img class="bioImg" src="../image/cropped/Yurii.jpg" alt="Image of Yurii">
-      <p class="bioP">Aspiring software developer passionate about efficient, customer-oriented solutions with non-traditional background in infrastructure telecommunication.
-      </p>
-    </section>
+body {
+  background:linear-gradient(60deg,var(--dark-red),var(--dark-yellow),var(--dark-green),var(--dark-blue),var(--dark-blue));
+  outline:2px solid var(--black);
+}
 
-  </main>
+#sidebarContainer {
+  margin:2vh 0 2vh 0;
+}
+
+#sidebarContainer nav ul {
+  display:flex;
+  flex-direction:row;
+  justify-content:space-evenly;
+  font-family:"Rye", serif;
+
+}
+#sidebarContainer nav ul li:hover {
+  cursor: pointer;
+  color: indigo;
+}
+
+#sidebarContainer nav ul a {
+  text-decoration:none;
+  color: white;
+  font-size: 1.5em;
+  font-weight: 250px;
+  padding: 20px;
+  letter-spacing: 0.08em;
+  text-shadow: 10px 5px 10px #202124;
+}
+
+#sidebarContainer nav ul li:hover {
+  cursor: pointer;
+}
+
+/******MAIN BODY WITH BIOS*************/
+
+main {
+  padding: 30px;
+  justify-items:center;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  line-height: 2vh;
+  /* border:10px solid red; */
+}
+/*
+@media (max-width:800px ){
+  main {grid-row-gap:0px;}
+}
+
+@media (max-width:1000px ){
+  main {grid-row-gap:10px;}
+}
+
+@media (max-width:1500px ){
+  main {grid-row-gap:50px;}
+}*/
+
+.bioSection {
+  /* border:10px solid green; */
+  margin:2vh 20px 0 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  align-items:center;
+  max-width:90%;
+  padding:20px;
+  transition: background 1s;
+  border-radius:30px;
+}
+
+.bioSection:hover {
+  background:var(--dark-chrome);
   
+}
 
-  <script src="app.js"></script>
-</body>
-<footer>&copy 2022 Code Fellows Team FVI </footer>
-</html>
+
+
+.bioSection h2 {
+  font-size:1.5em;
+  line-height: 1.1em;
+  /* border:2px solid orange; */
+  grid-area: 1 / 1 / 2 / 2;
+  text-align:right;
+  padding-left: 20px;
+}
+
+.bioSection img {
+  width:150px;
+  height:150px;
+  object-fit:cover;
+  /* border:2px solid brown; */
+  grid-area: 1 / 2 / 2 / 3;
+  animation:border 10s infinite;
+  border-radius:10%;
+}
+
+@keyframes border {
+  0%  {outline:5px solid var(--dark-blue);}
+  33% {outline:5px solid var(--dark-green);}
+  66% {outline:5px solid var(--dark-red);}
+  100% {outline:5px solid var(--dark-blue);}
+} 
+
+.bioSection p {
+  /* border:2px solid yellow; */
+  grid-area: 1 / 3 / 2 / 7;
+  padding-left: 10px;
+}
+
+footer {
+  color: white;
+  font-size: 1em;
+  text-align: center;
+  padding-top: 10px;
+}
