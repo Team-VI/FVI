@@ -21,6 +21,7 @@ let spinDisplay = document.querySelector('#spinDisplay');
 
 let startingSpins = 20;
 let score = 0;
+let game = 0;
 let tokens = ['😈','👻','🎃'];
 
 
@@ -77,7 +78,8 @@ function handleSpin ()
   /* render the remaining spins */
   if(startingSpins>99){
     spinDisplay.textContent = `Spins:${startingSpins}`;
-  }else if(startingSpins<=99 && startingSpins>9){ spinDisplay.textContent = `Spins:0${startingSpins}`;
+  }else if(startingSpins<=99 && startingSpins>9){ 
+    spinDisplay.textContent = `Spins:0${startingSpins}`;
   }else if(startingSpins<=9){
     spinDisplay.textContent = `Spins:00${startingSpins}`;
   }
@@ -85,23 +87,31 @@ function handleSpin ()
   }
   else 
   {
-    let userName = prompt(`Game Over. Final score: ${score}. Please enter your Name to save Result`);
+    let userName = prompt(`Game Over. Final score: ${score}. Please enter your name to save results.`);
     let savedUser = JSON.stringify(userName);
     let savedScore = JSON.stringify(score);
     localStorage.setItem('user', savedUser);
     localStorage.setItem('score', savedScore);
+
+    game++;
+    // console.dir(savedUser);
+    // console.dir(savedScore);
     window.location.reload();
     
   }
 }
+
+
 
 function calculateScore(box1, box2, box3){
   if (box1 === box2 && box2 === box3){
   score += 100;
   } 
   return score;
-
 }
+
+
+
 
 let usersInfo = localStorage.getItem('usersStorage');
 if (usersInfo){
@@ -121,15 +131,20 @@ localStorage.removeItem('user');
 localStorage.removeItem('score');
 
 
+
 function UserScore(userName, score){
   this.userName = userName;
   this.score = score;
 }
+
 if (fetchedUser !== null && fetchedScore !== null){
   createUserObj(fetchedUser, fetchedScore);
 }
 
+
+
 storeUserArray();
+
 
 function createUserObj(userName, score){
   let userObj = new UserScore(userName, score);
@@ -157,7 +172,6 @@ function header(){ /*****Stand alone function */
 
   let tableRow = document.createElement('tr');
   recordTable.appendChild(tableRow);
-
 
   let tableHeader = document.createElement('th');
   tableHeader.textContent = 'Player';
@@ -194,13 +208,14 @@ header();
 
 function renderTable() {
   for (let i = 0; i < userArray.length; i++) {
+
   let tr = document.createElement('tr');
   recordTable.appendChild(tr);
+
   let td = document.createElement('td');
-  
   td.textContent = userArray[i].userName;
-  
   tr.appendChild(td);
+
   let tdcookie = document.createElement('td');
   tdcookie.textContent = userArray[i].score;
   tr.appendChild(tdcookie);

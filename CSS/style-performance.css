@@ -23,7 +23,7 @@ body {
 body {
   width:100vw;
   height:100vh;
-  /* background:linear-gradient(45deg,var(--dark-red),var(--dark-yellow),var(--dark-green),var(--dark-blue)); */
+  background:linear-gradient(60deg,var(--dark-red),var(--dark-yellow),var(--dark-green),var(--dark-blue),var(--dark-blue));
   background-repeat:no-repeat;
 }
 
@@ -78,6 +78,26 @@ main {
   text-shadow: 10px 5px 10px #132022;
 }
 
-#canvasContainer {
-  outline:2px dashed red;
+#performanceTable {
+  outline:2px solid var(--black);
+  background-color:var(--white);
+  text-align:center;
+  color:var(--black);
+  font-size:2em;
+}
+
+#performanceTable tr {
+  height:20px;
+  outline:2px solid var(--black);
+  
+}
+
+#performanceTable td {
+  outline:2px solid var(--black);
+  vertical-align:middle;
+}
+
+#performanceTable th {
+  outline:2px solid var(--black);
+  vertical-align:middle;
 }
