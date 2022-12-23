@@ -2,45 +2,46 @@
 //  //************************DOM */
 
 // let recordTable = document.getElementById('performanceTable');
-// let userArray = [];
 
-// //**************Parsed data */
+// import { userArray } from "./app.js";
 
-// // let leaderBoard = localStorage.getItem('');
-// // if (leaderBoard) {
-// //   let parseleaderInfo = JSON.parse(leaderBoard);
-// //   for (let linfo of parseleaderInfo) {
-// //     let name = linfo.name;
-// //     let score = linfo.score;
-// //     makeleaderScoreInfo(name, score);
-// //   }
+// // //**************Parsed data */
+
+// // // let leaderBoard = localStorage.getItem('');
+// // // if (leaderBoard) {
+// // //   let parseleaderInfo = JSON.parse(leaderBoard);
+// // //   for (let linfo of parseleaderInfo) {
+// // //     let name = linfo.name;
+// // //     let score = linfo.score;
+// // //     makeleaderScoreInfo(name, score);
+// // //   }
+// // // }
+
+
+// // let fetchedUser = localStorage.getItem('user');
+// // let parsedUser = JSON.parse(fetchedUser);
+// // let fetchedScore = localStorage.getItem('score');
+// // let parsedScore = JSON.parse(fetchedScore);
+// // localStorage.removeItem('user');
+// // localStorage.removeItem('score');
+
+
+// // function UserScore(userName, score){
+// //   this.userName = userName;
+// //   this.score = score;
 // // }
+// // createUserObj(fetchedUser, fetchedScore);
+// // storeUserArray();
 
-
-// let fetchedUser = localStorage.getItem('user');
-// let parsedUser = JSON.parse(fetchedUser);
-// let fetchedScore = localStorage.getItem('score');
-// let parsedScore = JSON.parse(fetchedScore);
-// localStorage.removeItem('user');
-// localStorage.removeItem('score');
-
-
-// function UserScore(userName, score){
-//   this.userName = userName;
-//   this.score = score;
-// }
-// createUserObj(fetchedUser, fetchedScore);
-// storeUserArray();
-
-// function createUserObj(userName, score){
-//   let userObj = new UserScore(userName, score);
-//   userArray.push(userObj);
-//   console.log(userArray);
-// }
-// function storeUserArray(){
-//   let stringifiedArray = JSON.stringify(userArray);
-//   localStorage.setItem('usersStorage', stringifiedArray);
-// }  
+// // function createUserObj(userName, score){
+// //   let userObj = new UserScore(userName, score);
+// //   userArray.push(userObj);
+// //   console.log(userArray);
+// // }
+// // function storeUserArray(){
+// //   let stringifiedArray = JSON.stringify(userArray);
+// //   localStorage.setItem('usersStorage', stringifiedArray);
+// // }  
 
 
 

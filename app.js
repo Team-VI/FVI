@@ -3,6 +3,7 @@
 
 //******************DOM********************/
 let recordTable = document.getElementById('performanceTable');
+
 let userArray = [];
 
 let boxOne = document.getElementById('box1');
@@ -12,9 +13,6 @@ let boxThree = document.getElementById('box3');
 let playButton = document.getElementById('mainBet');
 let scoreDisplay = document.querySelector('#scoreDisplay');
 let spinDisplay = document.querySelector('#spinDisplay');
-// let recordTable = document.getElementById('record-table');
-
-// let userDisplay = document.getElementById('userDisplay');
 
 //**************GLOBALS-VARIABLES***********************************/////////
 
@@ -93,6 +91,7 @@ function handleSpin ()
     localStorage.setItem('user', savedUser);
     localStorage.setItem('score', savedScore);
     window.location.reload();
+    
   }
 }
 
@@ -159,6 +158,7 @@ function header(){ /*****Stand alone function */
   let tableRow = document.createElement('tr');
   recordTable.appendChild(tableRow);
 
+
   let tableHeader = document.createElement('th');
   tableHeader.textContent = 'Player';
   tableRow.appendChild(tableHeader);
@@ -171,54 +171,43 @@ function header(){ /*****Stand alone function */
 header();
 
 // function recordResult()     /**********Recording current result */
-// {
-//   let tableRow = document.createElement('tr');
+// { 
+//   let tableRow = document.createElement('ul');
 //   recordTable.appendChild(tableRow);
+//   for (let i=0; i<userArray.length; i++){
+//   // let tableRow = document.createElement('th');
+//   // recordTable.appendChild(tableRow);
 
-// //   tableCell = document.createElement('td');
-// //   tableCell.textContent = User.name;
-// //   tableRow.appendChild(tableCell);
+//   // tableCell = document.createElement('td');
+//   // tableCell.textContent = userArray[i].userName;
+//   // tableRow.appendChild(tableCell);
 
-// //   tableCell = document.createElement('td');
-// //   tableCell.textContent = User.score;
-// //   tableRow.appendChild(tableCell);
-
-// // }
-
-// recordResult();
-
-
-
-
-
-
-
-
-
-
-
-
-
-// //TODO:  attatch form to constructor for user input
-
-
-
-// let fetchedUser = localStorage.getItem('user');
-// let parsedUser = JSON.parse(fetchedUser);
-// let fetchedScore = localStorage.getItem('score');
-// let parsedScore = JSON.parse(fetchedScore);
-
-
-
-
-// userDisplay.textContent=`test${parsedUser} and ${parsedScore} `;
-
-// if (parsedUser) {
-//   for (let i = 0; i < userArray.length; i++){
-//     userArray[i].name = parsedusers[i].name;
-//     userArray[i].score = parsedusers[i].score;
-//   }
+//   // tableCell = document.createElement('td');
+//   // tableCell.textContent = userArray[i].score;
+//   // tableRow.appendChild(tableCell);
+//   let tableNum = document.createElement('li');
+//   tableRow.appendChild(tableNum);
+//   tableNum.textContent =userArray[i].userName;
+  
 // }
+// }
+
+function renderTable() {
+  for (let i = 0; i < userArray.length; i++) {
+  let tr = document.createElement('tr');
+  recordTable.appendChild(tr);
+  let td = document.createElement('td');
+  
+  td.textContent = userArray[i].userName;
+  
+  tr.appendChild(td);
+  let tdcookie = document.createElement('td');
+  tdcookie.textContent = userArray[i].score;
+  tr.appendChild(tdcookie);
+  }
+}
+renderTable();
+
 
 
 playButton.addEventListener('click', handleSpin);
